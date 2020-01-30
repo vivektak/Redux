@@ -13,8 +13,8 @@ const Header = ({ selectedEndDate, selectedStartDate, handleEndDateChange, handl
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Grid container justify="space-around">
-                <DatePicker selectedStartDate={selectedStartDate} handleStartDateChange={handleStartDateChange} startDate='Start Date' />
-                <DatePicker selectedEndDate={selectedEndDate} handleEndDateChange={handleEndDateChange} startDate='End Date' />
+                <DatePicker selectedDate={selectedStartDate} handleDateChange={handleStartDateChange} dateLabel='Start Date' />
+                <DatePicker selectedDate={selectedEndDate} handleDateChange={handleEndDateChange} dateLabel='End Date' />
                 <Button
                     onClick={() => handleReset()}
                     color="secondary"

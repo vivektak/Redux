@@ -1,4 +1,4 @@
-import { DATA_LOADED } from "../constants/index";
+import { DATA_LOADED, API_ERRORED } from "../constants/index";
 
 const initialState = {
     users: [],
@@ -38,6 +38,11 @@ function rootReducer(state = initialState, action) {
     if (action.type === DATA_LOADED) {
         return Object.assign({}, state, {
             users: [...state.users, ...action.payload]
+        });
+    } else if (action.type === API_ERRORED) {
+        alert('There is some issues calling the API');
+        return Object.assign({}, {
+            users: []
         });
 
     }

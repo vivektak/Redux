@@ -5,11 +5,9 @@ import moment from 'moment';
 import Header from './Header';
 import { getStatus, getUserName } from '../helper';
 import CampaignTable from './CampaignTable';
+import { createSelector } from 'reselect';
 
 
-const mapStateToProps = state => {
-    return { campaigns: state.campaigns, users: state.users };
-};
 
 const CampaignDashboard = ({ campaigns, getData, users }) => {
 
@@ -62,5 +60,18 @@ const CampaignDashboard = ({ campaigns, getData, users }) => {
         </div >
     );
 };
+
+// const getListings = createSelector(
+//     state => state.compaign,
+//     state => state.users,
+//     (campaigns, users) => campaigns.map( campaign =>{
+
+//     })
+// )
+
+const mapStateToProps = state => {
+    return { campaigns: state.campaigns, users: state.users };
+};
+
 
 export default connect(mapStateToProps, { getData })(CampaignDashboard);

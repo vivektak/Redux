@@ -3,15 +3,15 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 
-const DatePicker = ({ selectedStartDate, handleStartDateChange, startDate }) => {
+const DatePicker = ({ selectedDate, handleDateChange, dateLabel }) => {
     return (
         <KeyboardDatePicker
             margin="normal"
             id="start-date-picker-dialog"
-            label={startDate}
+            label={dateLabel}
             format="MM/dd/yyyy"
-            value={selectedStartDate}
-            onChange={handleStartDateChange}
+            value={selectedDate}
+            onChange={handleDateChange}
             KeyboardButtonProps={{
                 'aria-label': 'change date',
             }}

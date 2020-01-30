@@ -1,4 +1,4 @@
-import { DATA_LOADED, API_URL } from "../constants";
+import { DATA_LOADED, API_URL, API_ERRORED } from "../constants";
 
 export function getData() {
     return function (dispatch) {
@@ -6,6 +6,9 @@ export function getData() {
             .then(response => response.json())
             .then(json => {
                 dispatch({ type: DATA_LOADED, payload: json });
+            })
+            .catch(error => {
+                dispatch({ type: API_ERRORED, payload: error })
             });
     };
 };
