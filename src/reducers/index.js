@@ -2,7 +2,7 @@ import { DATA_LOADED } from "../constants/index";
 
 const initialState = {
     users: [],
-    compaigns: [{
+    campaigns: [{
         "id": 11, "name": "Divavu", "startDate": "1/1/2020", "endDate": "3/31/2020", "Budget": 88377, "userId": 33
     },
     {

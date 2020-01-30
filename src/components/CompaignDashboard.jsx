@@ -4,14 +4,14 @@ import { getData } from '../actions';
 import moment from 'moment';
 import Header from './Header';
 import { getStatus, getUserName } from '../helper';
-import CompaignTable from './CompaignTable';
+import CampaignTable from './CampaignTable';
 
 
 const mapStateToProps = state => {
-    return { compaigns: state.compaigns, users: state.users };
+    return { campaigns: state.campaigns, users: state.users };
 };
 
-const CompaignDashboard = ({ compaigns, getData, users }) => {
+const CampaignDashboard = ({ campaigns, getData, users }) => {
 
     const [selectedStartDate, setSelectedStartDate] = useState(moment());
     const [selectedEndDate, setSelectedEndDate] = useState(moment());
@@ -23,7 +23,7 @@ const CompaignDashboard = ({ compaigns, getData, users }) => {
     }, []);
 
     const addCompaigns = (data) => {
-        compaigns = [...compaigns, ...data];
+        campaigns = [...campaigns, ...data];
     };
 
     window.addCompaigns = addCompaigns;
@@ -35,10 +35,11 @@ const CompaignDashboard = ({ compaigns, getData, users }) => {
 
     const filterCompaignData = (startDate, endDate) => {
         setShowFilterData(true);
-        const filteredCompaign = compaigns.filter(compaign => {
+        const filteredCompaign = campaigns.filter(compaign => {
             if (moment(compaign.startDate) >= startDate && moment(compaign.endDate) <= endDate) {
                 return compaign;
             };
+            return [];
         });
         setFilteredCompaign(filteredCompaign);
 
@@ -57,9 +58,9 @@ const CompaignDashboard = ({ compaigns, getData, users }) => {
     return (
         <div className="container-fluid compaign-dashboard" >
             <Header selectedEndDate={selectedEndDate} selectedStartDate={selectedStartDate} handleEndDateChange={handleEndDateChange} handleStartDateChange={handleStartDateChange} handleReset={handleReset} />
-            <CompaignTable getUserName={getUserName} getStatus={getStatus} users={users} showFilterData={showFilterData} compaigns={compaigns} filteredCompaign={filteredCompaign} />
+            <CampaignTable getUserName={getUserName} getStatus={getStatus} users={users} showFilterData={showFilterData} campaigns={campaigns} filteredCompaign={filteredCompaign} />
         </div >
     );
 };
 
-export default connect(mapStateToProps, { getData })(CompaignDashboard);
+export default connect(mapStateToProps, { getData })(CampaignDashboard);

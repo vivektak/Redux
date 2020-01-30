@@ -15,6 +15,7 @@ export const getUserName = (userId, users) => {
         if (user.id === userId)
             return user;
     });
+
     if (userFound.length) {
         return userFound[0].username
     } else {

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import CompaignDashboard from './components/CompaignDashboard';
+import CampaignDashboard from './components/CompaignDashboard';
 
 
 function App() {
   return (
     <div className="App">
-      <CompaignDashboard />
+      <CampaignDashboard />
     </div>
   );
 }

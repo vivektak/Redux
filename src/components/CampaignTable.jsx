@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialTable from "material-table";
 
-const CompaignTable = ({ getUserName, getStatus, users, showFilterData, compaigns, filteredCompaign }) => {
+const CampaignTable = ({ getUserName, getStatus, users, showFilterData, campaigns, filteredCompaign }) => {
     return (
         <MaterialTable
             columns={[
@@ -12,8 +12,8 @@ const CompaignTable = ({ getUserName, getStatus, users, showFilterData, compaign
                 { title: 'Active', field: "isActive", render: row => <span className={getStatus(row.startDate, row.endDate) === 'Active' ? 'active' : 'inactive'}>{getStatus(row.startDate, row.endDate)}</span> },
                 { title: 'Budget', field: "Budget" }
             ]}
-            title='Compaigns'
-            data={showFilterData ? filteredCompaign : compaigns}
+            title='Campaigns'
+            data={showFilterData ? filteredCompaign : campaigns}
             options={{
                 actionsColumnIndex: -1,
                 pageSize: 5
@@ -22,4 +22,4 @@ const CompaignTable = ({ getUserName, getStatus, users, showFilterData, compaign
     );
 }
 
-export default CompaignTable;
+export default CampaignTable;
