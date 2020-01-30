@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.compaign-dashboard{
+  margin-top: 20px;
+}
+.MuiPaper-rounded{
+  margin: 20px;
+}
+.MuiButton-containedSecondary{
+  height: 40px;
+    
+    margin-top: 15px;
+}
