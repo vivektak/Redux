@@ -1,12 +1,14 @@
 import moment from 'moment';
+import { INACTIVE, ACTIVE, UNKNOWN_USER } from '../constants';
+
 
 export const getStatus = (startDate, endDate) => {
     const currentDate = moment();
     if (currentDate < moment(endDate) && currentDate > moment(startDate)) {
-        return 'Active';
-    }
-    return 'Ínactive';
-}
+        return ACTIVE;
+    };
+    return INACTIVE;
+};
 
 export const getUserName = (userId, users) => {
     const userFound = users.filter(user => {
@@ -16,7 +18,7 @@ export const getUserName = (userId, users) => {
     if (userFound.length) {
         return userFound[0].username
     } else {
-        return 'Unknown User'
-    }
+        return UNKNOWN_USER;
+    };
 
-}
+};

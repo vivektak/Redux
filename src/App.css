@@ -43,8 +43,13 @@
 .MuiPaper-rounded{
   margin: 20px;
 }
-.MuiButton-containedSecondary{
+.MuiButton-contained{
   height: 40px;
-    
-    margin-top: 15px;
+  margin-top: 35px;
+}
+.inactive{
+  color : red;
+}
+.active { 
+  color: green;
 }

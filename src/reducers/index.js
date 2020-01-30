@@ -37,7 +37,7 @@ const initialState = {
 function rootReducer(state = initialState, action) {
     if (action.type === DATA_LOADED) {
         return Object.assign({}, state, {
-            users: state.users.concat(action.payload)
+            users: [...state.users, ...action.payload]
         });
 
     }

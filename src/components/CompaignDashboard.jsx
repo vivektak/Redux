@@ -22,6 +22,12 @@ const CompaignDashboard = ({ compaigns, getData, users }) => {
         getData();
     }, []);
 
+    const addCompaigns = (data) => {
+        compaigns = [...compaigns, ...data];
+    };
+
+    window.addCompaigns = addCompaigns;
+
     const handleStartDateChange = date => {
         setSelectedStartDate(date);
         filterCompaignData(moment(date), moment(selectedEndDate));
