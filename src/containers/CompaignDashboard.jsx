@@ -32,12 +32,13 @@ const CampaignDashboard = ({ campaigns, getData, users }) => {
     };
 
     const filterCompaignData = (startDate, endDate) => {
+
         setShowFilterData(true);
         const filteredCompaign = campaigns.filter(compaign => {
             if (moment(compaign.startDate) >= startDate && moment(compaign.endDate) <= endDate) {
                 return compaign;
             };
-            return [];
+            return false;
         });
         setFilteredCompaign(filteredCompaign);
 

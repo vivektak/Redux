@@ -14,6 +14,7 @@ export const getUserName = (userId, users) => {
     const userFound = users.filter(user => {
         if (user.id === userId)
             return user;
+        return false;
     });
 
     if (userFound.length) {

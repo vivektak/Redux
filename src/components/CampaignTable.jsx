@@ -2,6 +2,8 @@ import React from 'react';
 import MaterialTable from "material-table";
 
 const CampaignTable = ({ getUserName, getStatus, users, showFilterData, campaigns, filteredCompaign }) => {
+    console.log(showFilterData);
+    console.log(filteredCompaign);
     return (
         <MaterialTable
             columns={[

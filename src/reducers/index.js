@@ -40,6 +40,7 @@ function rootReducer(state = initialState, action) {
             users: [...state.users, ...action.payload]
         });
     } else if (action.type === API_ERRORED) {
+        //throw new Error('I crashed!');
         alert('There is some issues calling the API');
         return Object.assign({}, {
             users: []

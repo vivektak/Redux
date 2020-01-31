@@ -8,7 +8,7 @@ export function getData() {
                 dispatch({ type: DATA_LOADED, payload: json });
             })
             .catch(error => {
-                dispatch({ type: API_ERRORED, payload: error })
+                dispatch({ type: API_ERRORED })
             });
     };
 };

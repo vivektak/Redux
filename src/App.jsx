@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
 import CampaignDashboard from './containers/CompaignDashboard';
+import ErrorBoundary from './errors/ErrorBoundary';
 
 
 function App() {
   return (
-    <div className="App">
-      <CampaignDashboard />
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <CampaignDashboard />
+      </div>
+    </ErrorBoundary>
   );
 }
 
