@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CampaignDashboard from './components/CompaignDashboard';
+import CampaignDashboard from './containers/CompaignDashboard';
 
 
 function App() {

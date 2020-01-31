@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions';
 import moment from 'moment';
-import Header from './Header';
+import Header from '../components/Header';
 import { getStatus, getUserName } from '../helper';
-import CampaignTable from './CampaignTable';
+import CampaignTable from '../components/CampaignTable';
 import { createSelector } from 'reselect';
 
 
